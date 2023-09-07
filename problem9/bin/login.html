@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+		var myobj={
+			"abc@gmail.com" : "12345",
+			"def@gmail.com" : "12345"
+		};
+		document.getElementById("loginForm").addEventListener("submit", myfun());
+		function myfun(){
+			event.preventDefault();
+        
+           var username=document.getElementById("username").value;
+           var password=document.getElementById("password").value;
+           
+           if(username in myobj){
+			   if(myobj[username]==password){
+				   alert("Login successful");
+			   }else{
+				   alert("wrong password");
+			   }
+			   
+		   }else{
+			   alert("wrong username");
+		   }
+           
+		}
+		
+		
+		
+    </script>
+</body>
+</html>
