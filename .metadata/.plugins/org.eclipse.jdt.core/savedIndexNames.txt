@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+/home/anshuman/Desktop/goldilocks/.metadata/.plugins/org.eclipse.jdt.core
+3485073493.index
+2585675818.index
+1865797976.index
+651797856.index
