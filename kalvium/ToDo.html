@@ -4,8 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #mainDiv{
+            display: flex;
+            justify-content: space-between;
+        }
+        #form-div{
+            margin: 10%;
+        }
+        #table-div{
+            margin: 10%;
+        }
+        #heading{
+            justify-content: center;
+            margin-left: 40%;
+            margin-top: 50px;
+        }
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    select {
+        height: 40px;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    table {
+        background-color: #fff;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:hover {
+        background-color: #ddd;
+    }
+    </style>
 </head>
 <body>
+    <h1 id="heading">TODO APP</h1>
     <div id="mainDiv">
         <div id="form-div">
             <h1>To-Do List Form</h1>
@@ -55,48 +156,29 @@
     
     
 </body>
-             <!-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const todoForm = document.getElementById("todo-form");
-            const todoTable = document.getElementById("todo-table").getElementsByTagName('tbody')[0];
-
-            todoForm.addEventListener("submit", function(e) {
-                e.preventDefault();
-
-                const taskName = document.getElementById("task-name").value;
-                const dueDate = document.getElementById("due-date").value;
-                const status = document.getElementById("status").value;
-                const comments = document.getElementById("comments").value;
-
-                // Create a new row for the table
-                const newRow = todoTable.insertRow();
-
-                // Create cells for each column
-                const nameCell = newRow.insertCell(0);
-                const dueDateCell = newRow.insertCell(1);
-                const statusCell = newRow.insertCell(2);
-                const commentsCell = newRow.insertCell(3);
-
-                // Populate the cells with the form values
-                nameCell.textContent = taskName;
-                dueDateCell.textContent = dueDate;
-                statusCell.textContent = status;
-                commentsCell.textContent = comments;
-
-                // Clear the form fields
-                todoForm.reset();
-            });
-        });
-    </script> -->
+             
     <script>
-        const todoForm= Document.getElementById("todo-form");
-        todoForm.addEventListner("submit",function(e){
-            e.PreventDefault();
-            const taskName=Document.getElementById("task-name").value;
+        const todoForm= document.getElementById("todo-form");
+        todoForm.addEventListener("submit",function(e){
+            e.preventDefault();
+            const taskName=document.getElementById("task-name").value;
             const dueDate=document.getElementById("due-date").value;
             const status=document.getElementById("status").value;
             const comment=document.getElementById("comments").value;
-            console.log(taskName);
+            //console.log(taskName);
+           const row1= document.createElement("tr");
+           const col1=document.createElement("td");
+           col1.innerText=taskName;
+           const col2=document.createElement("td");
+           col2.innerText=dueDate;
+           const col3=document.createElement("td");
+           col3.innerText=status;
+           const col4=document.createElement("td");
+           col4.innerText=comment;
+           row1.append(col1,col2,col3,col4);
+           let tableBody=document.getElementsByTagName("tbody")[0];
+           tableBody.append(row1);
+           
         });
         
     </script>
