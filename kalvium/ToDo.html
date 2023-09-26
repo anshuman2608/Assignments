@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="form-div">
+            <h1>To-Do List Form</h1>
+       <form id="todo-form">
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name" name="task-name" required><br>
+
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" name="due-date" required><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="pending">Pending</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+        </select><br>
+
+        <label for="comments">Comments:</label>
+        <input type="text" id="comments" name="comment" ><br>
+        <!-- <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br> -->
+
+        <button type="submit">Add Task</button>
+      </form>
+
+        </div>
+        <!-- table for dispalying the task -->
+        <div id="table-div">
+            <h2>To-Do List</h2>
+    <table id="table-div">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- we will add task here -->
+        </tbody>
+    </table>
+        </div>
+        
+        
+
+    </div>
+    
+    
+</body>
+             <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const todoForm = document.getElementById("todo-form");
+            const todoTable = document.getElementById("todo-table").getElementsByTagName('tbody')[0];
+
+            todoForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const taskName = document.getElementById("task-name").value;
+                const dueDate = document.getElementById("due-date").value;
+                const status = document.getElementById("status").value;
+                const comments = document.getElementById("comments").value;
+
+                // Create a new row for the table
+                const newRow = todoTable.insertRow();
+
+                // Create cells for each column
+                const nameCell = newRow.insertCell(0);
+                const dueDateCell = newRow.insertCell(1);
+                const statusCell = newRow.insertCell(2);
+                const commentsCell = newRow.insertCell(3);
+
+                // Populate the cells with the form values
+                nameCell.textContent = taskName;
+                dueDateCell.textContent = dueDate;
+                statusCell.textContent = status;
+                commentsCell.textContent = comments;
+
+                // Clear the form fields
+                todoForm.reset();
+            });
+        });
+    </script> -->
+    <script>
+        const todoForm= Document.getElementById("todo-form");
+        todoForm.addEventListner("submit",function(e){
+            e.PreventDefault();
+            const taskName=Document.getElementById("task-name").value;
+            const dueDate=document.getElementById("due-date").value;
+            const status=document.getElementById("status").value;
+            const comment=document.getElementById("comments").value;
+            console.log(taskName);
+        });
+        
+    </script>
+
+
+
+
+</html>
